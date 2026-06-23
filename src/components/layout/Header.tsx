@@ -16,10 +16,10 @@ export function Header() {
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-sm" : "bg-white"}`}>
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
         {/* Logo Section */}
         <div className="flex items-center cursor-pointer group">
-          <img src={logo} alt="GenBright Logo" className="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+          <img src={logo} alt="GenBright Logo" className="h-16 md:h-20 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
         </div>
 
         {/* Desktop Navigation */}

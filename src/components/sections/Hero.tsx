@@ -23,14 +23,14 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center mb-4"
         >
-          <div className="w-32 h-32 md:w-40 md:h-40 flex items-center justify-center mb-0 md:mb-2">
+          <div className="w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
             <img 
               src={banyanLogo} 
               alt="Banyara Tree Logo" 
               className="w-full h-full object-contain mix-blend-screen opacity-90 brightness-90 contrast-150"
             />
           </div>
-          <span className="text-xl md:text-3xl font-serif text-[#e8f1da] tracking-wide">
+          <span className="text-xl md:text-3xl font-serif text-[#e8f1da] tracking-wide mt-[-20px] md:mt-[-30px]">
             Banyara
           </span>
         </motion.div>
