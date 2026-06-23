@@ -1,35 +1,36 @@
-import { TreePine } from "lucide-react";
 import { motion } from "framer-motion";
-import heroVideo from "../../assets/videos/school_hero_video.mp4";
+import banyanLogo from "../../assets/images/banyan-logo.png";
+import heroBg from "../../assets/images/hero-bg.png";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-background">
-      {/* Background Video Placeholder */}
+    <section className="relative w-full h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden bg-[#111] mt-20">
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.4)_0%,transparent_60%)] z-10" /> {/* Center-focused overlay */}
-        <video 
-          src={heroVideo}
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="w-full h-full object-cover opacity-80 scale-[1.35] origin-center"
+        <div className="absolute inset-0 bg-black/20 z-10" />
+        <img 
+          src={heroBg}
+          alt="GenBright Environments"
+          className="w-full h-full object-cover opacity-90 object-center"
         />
       </div>
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 max-w-5xl mx-auto pt-20">
+      <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 max-w-5xl mx-auto h-full w-full pb-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col items-center gap-2 mb-4"
+          className="flex flex-col items-center mb-4"
         >
-          <div className="w-12 h-12 rounded-full bg-[#e8f1da] flex items-center justify-center mb-1 shadow-[0_0_30px_rgba(232,241,218,0.2)]">
-            <TreePine className="w-7 h-7 text-[#4a6b36]" />
+          <div className="w-32 h-32 md:w-40 md:h-40 flex items-center justify-center mb-0 md:mb-2">
+            <img 
+              src={banyanLogo} 
+              alt="Banyara Tree Logo" 
+              className="w-full h-full object-contain mix-blend-screen opacity-90 brightness-90 contrast-150"
+            />
           </div>
-          <span className="text-lg md:text-xl font-serif text-[#e8f1da] tracking-wide">
+          <span className="text-xl md:text-3xl font-serif text-[#e8f1da] tracking-wide">
             Banyara
           </span>
         </motion.div>
