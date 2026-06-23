@@ -2,35 +2,38 @@ import { motion } from "framer-motion";
 import banyanLogo from "../../assets/images/banyan-logo.png";
 import heroBg from "../../assets/images/hero-bg.png";
 
+// Apple-style cubic-bezier ease curve
+const appleEase = [0.25, 0.1, 0.25, 1] as const;
+
 export function Hero() {
   return (
-    <section className="relative w-full h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden bg-[#111] mt-20">
+    <section className="relative w-full h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden bg-black mt-20">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/20 z-10" />
+        <div className="absolute inset-0 bg-black/40 z-10" />
         <img 
           src={heroBg}
           alt="GenBright Environments"
-          className="w-full h-full object-cover opacity-90 object-center"
+          className="w-full h-full object-cover opacity-80 object-center"
         />
       </div>
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 max-w-5xl mx-auto h-full w-full pb-10">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col items-center mb-4"
+          transition={{ duration: 1, ease: appleEase }}
+          className="flex flex-col items-center mb-6"
         >
-          <div className="w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
+          <div className="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center">
             <img 
               src={banyanLogo} 
               alt="Banyara Tree Logo" 
-              className="w-full h-full object-contain mix-blend-screen opacity-90 brightness-90 contrast-150"
+              className="w-full h-full object-contain mix-blend-screen opacity-90 brightness-110 contrast-125"
             />
           </div>
-          <span className="text-xl md:text-3xl font-serif text-[#e8f1da] tracking-wide mt-[-20px] md:mt-[-30px]">
+          <span className="text-lg md:text-2xl text-white/90 tracking-widest font-medium uppercase mt-[-10px] md:mt-[-15px]">
             Banyara
           </span>
         </motion.div>
@@ -38,44 +41,34 @@ export function Hero() {
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-white font-medium mb-6"
-          style={{ fontFamily: "'Lora', serif" }}
+          transition={{ duration: 1, delay: 0.15, ease: appleEase }}
+          className="text-5xl md:text-7xl lg:text-8xl leading-[1.05] text-white font-semibold tracking-tight mb-8"
         >
           Childhood<br className="md:hidden" /> deserves better.
         </motion.h1>
 
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="flex flex-col items-center gap-4 mb-8"
+          transition={{ duration: 1, delay: 0.3, ease: appleEase }}
+          className="flex flex-col items-center gap-6 mb-12"
         >
-          <p className="text-base md:text-lg leading-relaxed text-white/95 max-w-3xl font-light tracking-wide" style={{ fontFamily: "'Outfit', sans-serif" }}>
+          <p className="text-xl md:text-2xl leading-relaxed text-[#a1a1a6] max-w-3xl font-medium tracking-tight">
             Not more pressure. Not more worksheets.<br className="hidden md:block" />
             Not mere rushing. Just more wonder.
-          </p>
-
-          <p className="text-base md:text-lg font-medium text-white tracking-wide" style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Look Within. &nbsp;Look Around. &nbsp;Look Beyond.
           </p>
         </motion.div>
 
         <motion.button 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="group relative inline-flex items-center justify-center px-6 py-3 bg-[#f8f6e6] text-[#2c3d28] font-bold text-base rounded-sm hover:bg-white transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_30px_rgba(248,246,230,0.3)] hover:-translate-y-1"
-          style={{ fontFamily: "'Outfit', sans-serif" }}
+          transition={{ duration: 1, delay: 0.45, ease: appleEase }}
+          className="bg-white hover:bg-background text-black px-8 py-4 rounded-full text-base font-semibold tracking-wide transition-all duration-300"
         >
-          <span className="absolute left-4 opacity-70 group-hover:-translate-x-1 transition-transform">[</span>
-          <span className="mx-6 tracking-wide">Book a Campus Visit</span>
-          <span className="absolute right-4 opacity-70 group-hover:translate-x-1 transition-transform">]</span>
+          Book a Campus Visit
         </motion.button>
       </div>
       
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-black/60 to-transparent z-10" />
     </section>
   );
 }

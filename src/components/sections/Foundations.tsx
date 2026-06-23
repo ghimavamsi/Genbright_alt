@@ -4,6 +4,8 @@ import feelImg from "../../assets/images/feel.png";
 import moveImg from "../../assets/images/move.png";
 import pauseImg from "../../assets/images/pause.png";
 
+const appleEase = [0.25, 0.1, 0.25, 1] as const;
+
 const foundations = [
   {
     id: "think",
@@ -11,8 +13,8 @@ const foundations = [
     quote: '"I wonder why..."',
     description: "The beginning of\nevery discovery.",
     image: thinkImg,
-    bgClass: "bg-[#f4f5f6]", // Light gray/blue
-    textClass: "text-[#2b4a68]", // Dark blue
+    bgClass: "bg-background", 
+    textClass: "text-primary",
   },
   {
     id: "feel",
@@ -20,8 +22,8 @@ const foundations = [
     quote: '"I understand\nhow you feel."',
     description: "The beginning of\nevery meaningful\nrelationship.",
     image: feelImg,
-    bgClass: "bg-[#fcf8f4]", // Light orange/peach
-    textClass: "text-[#9a5639]", // Dark orange
+    bgClass: "bg-background", 
+    textClass: "text-primary",
   },
   {
     id: "move",
@@ -29,8 +31,8 @@ const foundations = [
     quote: '"Let\'s try."',
     description: "The beginning of\nconfidence.",
     image: moveImg,
-    bgClass: "bg-[#f4f7f4]", // Light green
-    textClass: "text-[#2d5a3f]", // Dark green
+    bgClass: "bg-background", 
+    textClass: "text-primary",
   },
   {
     id: "pause",
@@ -38,22 +40,21 @@ const foundations = [
     quote: '"I noticed."',
     description: "The beginning of\nwisdom.",
     image: pauseImg,
-    bgClass: "bg-[#f7f5f9]", // Light purple
-    textClass: "text-[#4c3c78]", // Dark purple
+    bgClass: "bg-background", 
+    textClass: "text-primary",
   }
 ];
 
 export function Foundations() {
   return (
-    <section className="py-24 bg-white flex flex-col items-center px-4 md:px-8">
-      <div className="max-w-[1400px] w-full">
+    <section className="py-20 bg-white flex flex-col items-center px-4 md:px-8">
+      <div className="max-w-[1100px] w-full">
         <motion.p 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8 }}
-          className="text-center text-[#555] uppercase text-[13px] md:text-[14px] tracking-[0.2em] font-semibold mb-12"
-          style={{ fontFamily: "'Outfit', sans-serif" }}
+          transition={{ duration: 1, ease: appleEase }}
+          className="text-center text-[#86868b] uppercase text-[13px] md:text-[14px] tracking-widest font-semibold mb-12"
         >
           FOUR FOUNDATIONS. A LIFETIME OF IMPACT.
         </motion.p>
@@ -65,27 +66,26 @@ export function Foundations() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, delay: index * 0.15 }}
-              className={`${item.bgClass} ${item.textClass} rounded-2xl md:rounded-3xl overflow-hidden relative group h-[340px] md:h-[380px] w-full flex flex-col`}
+              transition={{ duration: 1, delay: index * 0.15, ease: appleEase }}
+              className={`${item.bgClass} ${item.textClass} border border-[#d2d2d7]/30 rounded-3xl overflow-hidden relative group h-[260px] md:h-[300px] w-full flex flex-col`}
             >
-              <div className="p-8 md:p-10 flex flex-col z-10 relative h-full">
-                <h3 className="font-serif text-3xl md:text-4xl mb-8 tracking-wide" style={{ fontFamily: "'Lora', serif" }}>
+              <div className="p-6 md:p-8 flex flex-col z-10 relative h-full">
+                <h3 className="text-2xl md:text-3xl font-serif mb-6 tracking-tight" style={{ fontFamily: "'Lora', serif" }}>
                   {item.title}
                 </h3>
-                <p className="font-bold text-sm md:text-[15px] leading-tight mb-4 whitespace-pre-line" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                <p className="font-medium text-sm md:text-[15px] leading-tight mb-3 whitespace-pre-line text-primary">
                   {item.quote}
                 </p>
-                <p className="text-sm md:text-[15px] leading-relaxed opacity-80 whitespace-pre-line font-light" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                <p className="text-sm md:text-[15px] leading-relaxed whitespace-pre-line text-[#86868b]">
                   {item.description}
                 </p>
               </div>
               
-              <div className="absolute bottom-4 right-4 w-[65%] h-[60%] pointer-events-none">
-                {/* mix-blend-darken ensures images with white backgrounds blend into the soft colored cards perfectly */}
+              <div className="absolute bottom-4 right-4 w-[60%] h-[60%] pointer-events-none opacity-80 mix-blend-multiply">
                 <img 
                   src={item.image} 
                   alt={`Abstract geometric shape for ${item.title}`}
-                  className="w-full h-full object-contain object-bottom mix-blend-darken drop-shadow-md transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-contain object-bottom drop-shadow-sm transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
             </motion.div>

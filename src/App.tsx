@@ -10,6 +10,7 @@ import { WhyChooseUs } from "./components/sections/WhyChooseUs";
 import { Campus } from "./components/sections/Campus";
 import { FounderMessage } from "./components/sections/FounderMessage";
 import { FinalCTA } from "./components/sections/FinalCTA";
+import { Footer } from "./components/layout/Footer";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <FounderMessage />
         <FinalCTA />
       </main>
+      <Footer />
     </div>
   );
 }

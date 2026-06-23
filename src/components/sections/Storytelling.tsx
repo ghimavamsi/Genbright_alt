@@ -26,8 +26,8 @@ export function Storytelling() {
   const yP6 = useTransform(scrollYProgress, [0.75, 0.8], [50, 0]);
 
   // Premium Tree Growth Animations
-  const treeScale = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6, 0.8, 1], [0.1, 0.4, 0.7, 1.0, 1.2, 1.3]);
-  const treeY = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6, 0.8], [250, 150, 50, 0, -20]);
+  const treeScale = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6, 0.8, 0.85, 1], [0.1, 0.4, 0.7, 1.0, 1.2, 1.3, 1.3]);
+  const treeY = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6, 0.8, 1], [250, 150, 50, 0, -20, -20]);
   const treeOpacity = useTransform(scrollYProgress, [0, 0.15, 0.3], [0, 0.8, 1]);
 
   // Mascot Speech Logic
@@ -51,12 +51,12 @@ export function Storytelling() {
   }))).current;
 
   return (
-    <section ref={containerRef} className="relative h-[300vh] bg-[#f8f9f6] text-[#2c3d28]">
+    <section ref={containerRef} className="relative h-[450vh] bg-[#f8f9f6] text-[#2c3d28]">
       <div className="sticky top-0 h-screen w-full flex flex-col md:flex-row overflow-hidden">
-        
+
         {/* Left Visual Pane */}
         <div className="w-full h-[50vh] md:h-screen md:w-1/2 relative flex items-center justify-center bg-linear-to-b from-[#eef3eb] to-[#e4eedd] overflow-hidden">
-          
+
           {/* Magical Particles */}
           <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-60">
             {particles.map((p) => (
@@ -75,12 +75,12 @@ export function Storytelling() {
           </div>
 
           {/* Premium Growing Tree Animation */}
-          <motion.div 
-            style={{ scale: treeScale, y: treeY, opacity: treeOpacity }} 
+          <motion.div
+            style={{ scale: treeScale, y: treeY, opacity: treeOpacity }}
             className="absolute bottom-0 w-[90%] h-[90%] max-w-[600px] flex items-end justify-center origin-bottom z-10 transition-all duration-300"
           >
-            <img 
-              src={banyanLogo} 
+            <img
+              src={banyanLogo}
               alt="Growing Banyan Tree"
               className="w-full h-full object-contain object-bottom mix-blend-multiply drop-shadow-[0_30px_40px_rgba(44,61,40,0.3)]"
             />
@@ -88,8 +88,8 @@ export function Storytelling() {
 
           {/* Mascot overlay */}
           <div className="absolute bottom-4 md:bottom-10 z-20 flex flex-col items-center">
-            <motion.div 
-              animate={{ y: [0, -10, 0] }} 
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               className="flex flex-col items-center"
             >
@@ -98,9 +98,9 @@ export function Storytelling() {
                 {speechText}
                 <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45 shadow-md"></div>
               </div>
-              <img 
-                src="/banyara-mascot.png" 
-                alt="Banyara Mascot" 
+              <img
+                src="/banyara-mascot.png"
+                alt="Banyara Mascot"
                 className="w-40 md:w-56 h-auto mix-blend-multiply drop-shadow-2xl"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
@@ -110,7 +110,7 @@ export function Storytelling() {
 
         {/* Right Story Pane */}
         <div className="w-full h-[50vh] md:h-screen md:w-1/2 relative flex items-center justify-center p-8 md:p-16">
-          
+
           <motion.div style={{ opacity: opacityP1, y: yP1 }} className="absolute max-w-md text-center md:text-left pointer-events-none">
             <h3 className="text-sm font-bold tracking-widest uppercase mb-4 text-[#7b9369]">Meet Banyara</h3>
             <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight" style={{ fontFamily: "'Lora', serif" }}>
@@ -171,7 +171,7 @@ export function Storytelling() {
           <motion.div style={{ opacity: opacityP6, y: yP6 }} className="absolute max-w-md text-center md:text-left pointer-events-none">
             <h3 className="text-sm font-bold tracking-widest uppercase mb-4 text-[#7b9369]">The Reveal</h3>
             <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight" style={{ fontFamily: "'Lora', serif" }}>
-              One Child.<br/>Endless Possibilities.
+              One Child.<br />Endless Possibilities.
             </h2>
             <p className="text-lg md:text-xl font-light opacity-90 mb-8 leading-relaxed" style={{ fontFamily: "'Outfit', sans-serif" }}>
               Banyara journeys alongside every GenBright child, helping them build strong roots, explore boldly, and grow into their fullest potential.
