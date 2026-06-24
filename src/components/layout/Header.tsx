@@ -28,7 +28,7 @@ export function Header() {
             <a
               key={item}
               href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-              className="text-primary hover:text-[#0066cc] text-[12px] font-semibold tracking-widest transition-colors relative"
+              className="text-primary hover:text-[#0066cc] text-[12px] font-bold tracking-widest transition-colors relative"
             >
               {item}
             </a>
@@ -37,7 +37,7 @@ export function Header() {
 
         {/* CTA & Mobile Toggle */}
         <div className={`flex items-center gap-4 transition-transform duration-500 ease-in-out ${isScrolled ? "translate-y-0" : "-translate-y-2.5"}`}>
-          <button className={`hidden md:inline-flex items-center justify-center px-6 lg:px-8 rounded-full bg-primary text-white text-[13px] font-semibold tracking-wider hover:bg-[#000000] transition-all duration-500 ease-in-out ${isScrolled ? "py-2.5" : "py-3"}`}>
+          <button className={`hidden md:inline-flex items-center justify-center px-6 lg:px-8 rounded-full bg-primary text-white text-[13px] font-bold tracking-wider hover:bg-[#000000] transition-all duration-500 ease-in-out ${isScrolled ? "py-2.5" : "py-3"}`}>
             BOOK A CAMPUS TOUR
           </button>
           <button 
@@ -56,12 +56,12 @@ export function Header() {
             <a
               key={item}
               href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-              className="text-primary hover:text-[#0066cc] text-lg font-semibold tracking-widest transition-colors"
+              className="text-primary hover:text-[#0066cc] text-lg font-bold tracking-widest transition-colors"
             >
               {item}
             </a>
           ))}
-          <button className="w-full mt-4 px-6 py-4 rounded-full bg-primary text-white text-center font-semibold tracking-wider hover:bg-[#000000] transition-colors">
+          <button className="w-full mt-4 px-6 py-4 rounded-full bg-primary text-white text-center font-bold tracking-wider hover:bg-[#000000] transition-colors">
             BOOK A CAMPUS TOUR
           </button>
         </div>
