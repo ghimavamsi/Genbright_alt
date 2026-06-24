@@ -5,7 +5,7 @@ const appleEase = [0.25, 0.1, 0.25, 1] as const;
 
 export function FounderMessage() {
   return (
-    <section className="py-20 md:py-24 bg-background border-b border-[#d2d2d7]/50">
+    <section className="py-20 md:py-24 bg-white border-b border-[#d2d2d7]/50">
       <div className="max-w-[1000px] mx-auto px-6">
         
         <motion.div 

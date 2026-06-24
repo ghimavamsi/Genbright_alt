@@ -20,7 +20,7 @@ export function Questions() {
   const statementY = useTransform(scrollYProgress, [0.9, 1], [20, 0]);
 
   return (
-    <section ref={containerRef} className="py-16 md:py-24 bg-[#f5f5f7] flex flex-col items-center px-4">
+    <section ref={containerRef} className="py-16 md:py-24 bg-white flex flex-col items-center px-4">
       <div className="max-w-[900px] w-full text-center">
         <motion.p 
           initial={{ opacity: 0, y: 20 }}

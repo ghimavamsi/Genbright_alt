@@ -4,7 +4,7 @@ const appleEase = [0.25, 0.1, 0.25, 1] as const;
 
 export function FinalCTA() {
   return (
-    <section className="py-20 md:py-24 bg-white text-primary border-t border-[#d2d2d7]/50">
+    <section className="py-20 md:py-24 bg-background text-primary border-t border-[#d2d2d7]/50">
       <div className="max-w-[1200px] mx-auto px-6">
         
         <motion.div 

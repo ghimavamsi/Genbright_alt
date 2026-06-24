@@ -10,7 +10,7 @@ export function Philosophy() {
   ];
 
   return (
-    <section className="py-20 md:py-24 bg-white flex flex-col items-center px-4">
+    <section className="py-20 md:py-24 bg-background flex flex-col items-center px-4">
       <div className="max-w-[1000px] w-full text-center flex flex-col items-center">
         
         {/* 1. Opening Statement */}

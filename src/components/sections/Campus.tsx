@@ -15,7 +15,7 @@ const images = [
 
 export function Campus() {
   return (
-    <section className="py-20 md:py-24 bg-white text-primary border-b border-[#d2d2d7]/50">
+    <section className="py-20 md:py-24 bg-background text-primary border-b border-[#d2d2d7]/50">
       <div className="max-w-[1400px] mx-auto px-6">
         
         {/* Header */}

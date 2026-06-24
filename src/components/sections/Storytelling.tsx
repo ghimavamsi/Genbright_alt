@@ -51,11 +51,11 @@ export function Storytelling() {
   }))).current;
 
   return (
-    <section ref={containerRef} className="relative h-[450vh] bg-[#f8f9f6] text-[#2c3d28]">
-      <div className="sticky top-0 h-screen w-full flex flex-col md:flex-row overflow-hidden">
+    <section ref={containerRef} className="relative h-[450vh] bg-background text-[#2c3d28]">
+      <div className="sticky top-0 h-screen w-full flex flex-col overflow-hidden">
 
-        {/* Left Visual Pane */}
-        <div className="w-full h-[50vh] md:h-screen md:w-1/2 relative flex items-center justify-center bg-linear-to-b from-[#eef3eb] to-[#e4eedd] overflow-hidden">
+        {/* Top Visual Pane */}
+        <div className="w-full h-[60vh] md:h-[65vh] relative flex items-center justify-center overflow-hidden">
 
           {/* Magical Particles */}
           <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-60">
@@ -108,10 +108,10 @@ export function Storytelling() {
           </div>
         </div>
 
-        {/* Right Story Pane */}
-        <div className="w-full h-[50vh] md:h-screen md:w-1/2 relative flex items-center justify-center p-8 md:p-16">
+        {/* Bottom Story Pane */}
+        <div className="w-full h-[40vh] md:h-[35vh] relative flex items-center justify-center p-6 md:p-12 overflow-hidden">
 
-          <motion.div style={{ opacity: opacityP1, y: yP1 }} className="absolute max-w-md text-center md:text-left pointer-events-none">
+          <motion.div style={{ opacity: opacityP1, y: yP1 }} className="absolute max-w-2xl px-4 text-center pointer-events-none flex flex-col items-center">
             <h3 className="text-sm font-bold tracking-widest uppercase mb-4 text-[#7b9369]">Meet Banyara</h3>
             <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight" style={{ fontFamily: "'Lora', serif" }}>
               A banyan tree doesn't grow overnight.
@@ -121,19 +121,19 @@ export function Storytelling() {
             </p>
           </motion.div>
 
-          <motion.div style={{ opacity: opacityP2, y: yP2 }} className="absolute max-w-md text-center md:text-left pointer-events-none">
+          <motion.div style={{ opacity: opacityP2, y: yP2 }} className="absolute max-w-2xl px-4 text-center pointer-events-none flex flex-col items-center">
             <h3 className="text-sm font-bold tracking-widest uppercase mb-4 text-[#7b9369]">Roots First</h3>
             <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight" style={{ fontFamily: "'Lora', serif" }}>
               Every journey begins with strong foundations.
             </h2>
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+            <div className="flex flex-wrap gap-3 justify-center w-full">
               {['Kindness', 'Confidence', 'Curiosity', 'Resilience'].map(tag => (
                 <span key={tag} className="px-4 py-2 bg-white rounded-full text-sm font-medium shadow-sm">{tag}</span>
               ))}
             </div>
           </motion.div>
 
-          <motion.div style={{ opacity: opacityP3, y: yP3 }} className="absolute max-w-md text-center md:text-left pointer-events-none">
+          <motion.div style={{ opacity: opacityP3, y: yP3 }} className="absolute max-w-2xl px-4 text-center pointer-events-none flex flex-col items-center">
             <h3 className="text-sm font-bold tracking-widest uppercase mb-4 text-[#7b9369]">Growing Strong</h3>
             <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight" style={{ fontFamily: "'Lora', serif" }}>
               Then Comes Strength
@@ -143,7 +143,7 @@ export function Storytelling() {
             </p>
           </motion.div>
 
-          <motion.div style={{ opacity: opacityP4, y: yP4 }} className="absolute max-w-md text-center md:text-left pointer-events-none">
+          <motion.div style={{ opacity: opacityP4, y: yP4 }} className="absolute max-w-2xl px-4 text-center pointer-events-none flex flex-col items-center">
             <h3 className="text-sm font-bold tracking-widest uppercase mb-4 text-[#7b9369]">Branching Out</h3>
             <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight" style={{ fontFamily: "'Lora', serif" }}>
               Then Branches
@@ -151,14 +151,14 @@ export function Storytelling() {
             <p className="text-lg md:text-xl font-light opacity-90 mb-6 leading-relaxed" style={{ fontFamily: "'Outfit', sans-serif" }}>
               Every child grows differently. Each branch represents a unique pathway.
             </p>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-xl">
               {['Creators', 'Explorers', 'Innovators', 'Leaders'].map(tag => (
                 <div key={tag} className="bg-white p-4 rounded-xl shadow-sm text-center font-medium">{tag}</div>
               ))}
             </div>
           </motion.div>
 
-          <motion.div style={{ opacity: opacityP5, y: yP5 }} className="absolute max-w-md text-center md:text-left pointer-events-none">
+          <motion.div style={{ opacity: opacityP5, y: yP5 }} className="absolute max-w-2xl px-4 text-center pointer-events-none flex flex-col items-center">
             <h3 className="text-sm font-bold tracking-widest uppercase mb-4 text-[#7b9369]">The Canopy</h3>
             <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight" style={{ fontFamily: "'Lora', serif" }}>
               Then Possibilities
@@ -168,7 +168,7 @@ export function Storytelling() {
             </p>
           </motion.div>
 
-          <motion.div style={{ opacity: opacityP6, y: yP6 }} className="absolute max-w-md text-center md:text-left pointer-events-none">
+          <motion.div style={{ opacity: opacityP6, y: yP6 }} className="absolute max-w-2xl px-4 text-center pointer-events-none flex flex-col items-center">
             <h3 className="text-sm font-bold tracking-widest uppercase mb-4 text-[#7b9369]">The Reveal</h3>
             <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight" style={{ fontFamily: "'Lora', serif" }}>
               One Child.<br />Endless Possibilities.
@@ -176,7 +176,7 @@ export function Storytelling() {
             <p className="text-lg md:text-xl font-light opacity-90 mb-8 leading-relaxed" style={{ fontFamily: "'Outfit', sans-serif" }}>
               Banyara journeys alongside every GenBright child, helping them build strong roots, explore boldly, and grow into their fullest potential.
             </p>
-            <div className="flex gap-4 justify-center md:justify-start">
+            <div className="flex gap-4 justify-center w-full">
               <span className="font-bold border-b-2 border-[#2c3d28] pb-1">Stay Grounded.</span>
               <span className="font-bold border-b-2 border-[#2c3d28] pb-1">Stay Curious.</span>
             </div>

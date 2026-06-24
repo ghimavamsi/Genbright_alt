@@ -15,15 +15,15 @@ export function Header() {
   }, []);
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/80 backdrop-blur-xl border-b border-[#d2d2d7]/50 shadow-[0_4px_24px_rgba(0,0,0,0.02)]" : "bg-transparent"}`}>
-      <div className={`max-w-[1400px] mx-auto px-6 transition-all duration-300 flex items-center justify-between ${isScrolled ? "py-2" : "py-4"}`}>
+    <header className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${isScrolled ? "bg-white/80 backdrop-blur-xl border-b border-[#d2d2d7]/50 shadow-[0_4px_24px_rgba(0,0,0,0.02)]" : "bg-transparent"}`}>
+      <div className={`max-w-[1400px] mx-auto px-6 transition-all duration-500 ease-in-out flex items-center justify-between ${isScrolled ? "py-2" : "py-4"}`}>
         {/* Logo Section */}
         <div className="flex items-center cursor-pointer group">
-          <img src={logo} alt="GenBright Logo" className={`w-auto object-contain transition-all duration-500 mix-blend-multiply ${isScrolled ? "h-10 md:h-12" : "h-14 md:h-16"}`} />
+          <img src={logo} alt="GenBright Logo" className={`w-auto object-contain transition-all duration-500 ease-in-out mix-blend-multiply ${isScrolled ? "h-10 md:h-12 translate-y-0" : "h-14 md:h-16 -translate-y-2"}`} />
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8 lg:gap-10">
+        <nav className={`hidden md:flex items-center gap-8 lg:gap-10 transition-transform duration-500 ease-in-out ${isScrolled ? "translate-y-0" : "-translate-y-2.5"}`}>
           {["LEARNING", "CAMPUS", "LIFE AT GENBRIGHT", "ADMISSIONS", "ABOUT US"].map((item) => (
             <a
               key={item}
@@ -36,8 +36,8 @@ export function Header() {
         </nav>
 
         {/* CTA & Mobile Toggle */}
-        <div className="flex items-center gap-4">
-          <button className={`hidden md:inline-flex items-center justify-center px-6 lg:px-8 rounded-full bg-primary text-white text-[13px] font-semibold tracking-wider hover:bg-[#000000] transition-colors duration-300 ${isScrolled ? "py-2.5" : "py-3"}`}>
+        <div className={`flex items-center gap-4 transition-transform duration-500 ease-in-out ${isScrolled ? "translate-y-0" : "-translate-y-2.5"}`}>
+          <button className={`hidden md:inline-flex items-center justify-center px-6 lg:px-8 rounded-full bg-primary text-white text-[13px] font-semibold tracking-wider hover:bg-[#000000] transition-all duration-500 ease-in-out ${isScrolled ? "py-2.5" : "py-3"}`}>
             BOOK A CAMPUS TOUR
           </button>
           <button 

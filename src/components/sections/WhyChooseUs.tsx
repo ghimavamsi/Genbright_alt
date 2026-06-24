@@ -18,7 +18,7 @@ const itemVariants: Variants = {
 
 export function WhyChooseUs() {
   return (
-    <section className="py-24 md:py-32 bg-[#fdfbf7] text-[#2c3d28] overflow-hidden">
+    <section className="py-24 md:py-32 bg-white text-[#2c3d28] overflow-hidden">
       <div className="max-w-[1300px] mx-auto px-6 lg:px-12">
 
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
